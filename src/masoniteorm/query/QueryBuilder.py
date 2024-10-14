@@ -1957,7 +1957,7 @@ class QueryBuilder(ObservesEvents):
                 if isinstance(related_result, Collection):
                     related.register_related(relation_key, model, map_related)
                 else:
-                    model.add_relation({relation_key: related_result or None})
+                    model.add_relation({relation_key: map_related or None})
         else:
             hydrated_model.add_relation({relation_key: related_result or None})
         return self
